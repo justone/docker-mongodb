@@ -10,6 +10,6 @@ run     mkdir -p /var/run/sshd
 run     mkdir -p /var/log/supervisor
 run     locale-gen en_US en_US.UTF-8
 run     /bin/sh -c 'echo root:testpass | chpasswd'
-insert  http://localhost:8000/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+add     supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 expose  27017 22
 cmd     ["/usr/bin/supervisord", "-n"]
